@@ -1,0 +1,13 @@
+# This is workflow name 
+name: myjobs
+on:
+  push: 
+    branches: [main]
+jobs:
+  it:
+    runs-on: ubuntu-latest
+    steps:
+      - name: what's name of I.T. Engineer?
+        run: echo "I.T Engineer name is Ashish Kumar"
+      - name: Hii Ashish How are you?
+        run: echo "I'm good, what about you?"
