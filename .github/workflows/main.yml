@@ -1,0 +1,14 @@
+# This is workflow name
+name: introduction
+on: 
+  push: 
+    branches: [main]
+jobs:
+  self_introduction:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Say hi what's you name?
+          run: echo "I'm Ashish Kumar"
+        - name: How old are you?
+          run: echo "I'm 25 Year's old."
+          
