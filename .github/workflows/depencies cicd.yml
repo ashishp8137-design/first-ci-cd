@@ -1,0 +1,34 @@
+# This is workflow name which will show in Action Tab.
+name: depencies-cicd
+on:
+  workflow_dispatch:
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wishes From Org.
+        run: echo "Welcome to everyone."
+  code:
+      needs: [greet]
+      runs-on: ubuntu-latest
+      steps:
+        - name: checkout code
+          run: echo "Code Clone From GitHub."
+  build:
+    needs: [greet,code]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker Container
+        run: echo "Docker Container Build"
+  test:
+    needs: [greet,code,build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the Container
+        run: echo "Testing the Container"
+  deploy:
+    needs: [greet,code,build,test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying the App
+        run: echo "Docker Composed deployed the app"
