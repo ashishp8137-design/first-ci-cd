@@ -1,0 +1,23 @@
+# This name is workflow name
+name: Employee
+on:
+  workflow_dispatch:
+jobs:
+  company_details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Company Name
+        run: echo "Company name is Heritage Novandie Foods Ltd"
+      - name: Company Address
+        run: echo "Durvesh Village Near Mastan naka"
+  employee_details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Employee Name
+        run: echo "Employee Name is Avi"
+      - name: Employee Id.
+        run: echo "Employee id is -> 711229."
+      - name: Joining Date
+        run: echo "17 July 2023"
+      - name: Employee Address
+        run: echo "Bilal pada near dubey school Nalasopara East 401209."
