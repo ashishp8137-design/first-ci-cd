@@ -5,6 +5,7 @@ name: CICD
 on: 
   workflow_dispatch:
 jobs:
+# Every job needs seprate runner , its called parallelism
   code:
     runs-on: ubuntu-latest
     steps:
