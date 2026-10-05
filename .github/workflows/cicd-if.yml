@@ -1,0 +1,43 @@
+# This name will show on workflow Actions
+name: if-self-input-cicd
+on: 
+  workflow_dispatch:
+    inputs:
+     environment:
+       description: Target Environment
+       default: 'dev'
+       required: true
+       type: choice
+       options:
+        - dev
+        - prod
+        - staging
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        run: echo "Code clone from github"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker Container
+        run: echo "Docker container Build"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the Container
+        run: echo "Testing the Container"
+  deploy:
+    if: inputs.environment == 'dev'
+    needs: [code,build,test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploying the app
+        run: echo " Docker Deployed"
+
+    
+  
+      
+     
+     
